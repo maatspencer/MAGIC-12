@@ -10,7 +10,7 @@
     End Property
     Private m_name As String
 
-    ' Played Team
+    ' Player Team
     Public Property team() As String
         Get
             Return m_team
@@ -196,6 +196,16 @@
         End Set
     End Property
     Private mOvrRank As Integer
-
+    
+    ' Position
+    Public Property Pos() As String
+        Get
+            Return mPos
+        End Get
+        Set(value As String)
+            mPos = value
+        End Set
+    End Property
+    Private mPos As String
 
 End Class
