@@ -47,7 +47,7 @@ Partial Class Main
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.Offense = New System.Windows.Forms.TabPage()
+        Me.Ovr = New System.Windows.Forms.TabPage()
         Me.oRemove = New System.Windows.Forms.Button()
         Me.oDraft = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
@@ -88,14 +88,19 @@ Partial Class Main
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
+        Me.Flex = New System.Windows.Forms.TabPage()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.ListBox8 = New System.Windows.Forms.ListBox()
         Me.DEF.SuspendLayout()
         Me.PK.SuspendLayout()
         Me.TE.SuspendLayout()
         Me.RB.SuspendLayout()
         Me.WR.SuspendLayout()
         Me.QB.SuspendLayout()
-        Me.Offense.SuspendLayout()
+        Me.Ovr.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.Flex.SuspendLayout()
         Me.SuspendLayout()
         '
         'DEF
@@ -106,7 +111,7 @@ Partial Class Main
         Me.DEF.Controls.Add(Me.ListBox7)
         Me.DEF.Location = New System.Drawing.Point(4, 22)
         Me.DEF.Name = "DEF"
-        Me.DEF.Size = New System.Drawing.Size(300, 461)
+        Me.DEF.Size = New System.Drawing.Size(332, 461)
         Me.DEF.TabIndex = 6
         Me.DEF.Text = "DEF"
         '
@@ -150,7 +155,7 @@ Partial Class Main
         Me.PK.Controls.Add(Me.ListBox6)
         Me.PK.Location = New System.Drawing.Point(4, 22)
         Me.PK.Name = "PK"
-        Me.PK.Size = New System.Drawing.Size(300, 461)
+        Me.PK.Size = New System.Drawing.Size(332, 461)
         Me.PK.TabIndex = 5
         Me.PK.Text = "PK"
         '
@@ -194,7 +199,7 @@ Partial Class Main
         Me.TE.Controls.Add(Me.ListBox5)
         Me.TE.Location = New System.Drawing.Point(4, 22)
         Me.TE.Name = "TE"
-        Me.TE.Size = New System.Drawing.Size(300, 461)
+        Me.TE.Size = New System.Drawing.Size(332, 461)
         Me.TE.TabIndex = 4
         Me.TE.Text = "TE"
         '
@@ -238,7 +243,7 @@ Partial Class Main
         Me.RB.Controls.Add(Me.ListBox4)
         Me.RB.Location = New System.Drawing.Point(4, 22)
         Me.RB.Name = "RB"
-        Me.RB.Size = New System.Drawing.Size(300, 461)
+        Me.RB.Size = New System.Drawing.Size(332, 461)
         Me.RB.TabIndex = 3
         Me.RB.Text = "RB"
         '
@@ -282,7 +287,7 @@ Partial Class Main
         Me.WR.Controls.Add(Me.ListBox3)
         Me.WR.Location = New System.Drawing.Point(4, 22)
         Me.WR.Name = "WR"
-        Me.WR.Size = New System.Drawing.Size(300, 461)
+        Me.WR.Size = New System.Drawing.Size(332, 461)
         Me.WR.TabIndex = 2
         Me.WR.Text = "WR"
         '
@@ -327,7 +332,7 @@ Partial Class Main
         Me.QB.Location = New System.Drawing.Point(4, 22)
         Me.QB.Name = "QB"
         Me.QB.Padding = New System.Windows.Forms.Padding(3)
-        Me.QB.Size = New System.Drawing.Size(300, 461)
+        Me.QB.Size = New System.Drawing.Size(332, 461)
         Me.QB.TabIndex = 1
         Me.QB.Text = "QB"
         '
@@ -363,18 +368,18 @@ Partial Class Main
         Me.ListBox2.Size = New System.Drawing.Size(245, 394)
         Me.ListBox2.TabIndex = 7
         '
-        'Offense
+        'Ovr
         '
-        Me.Offense.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Offense.Controls.Add(Me.oRemove)
-        Me.Offense.Controls.Add(Me.oDraft)
-        Me.Offense.Controls.Add(Me.ListBox1)
-        Me.Offense.Location = New System.Drawing.Point(4, 22)
-        Me.Offense.Name = "Offense"
-        Me.Offense.Padding = New System.Windows.Forms.Padding(3)
-        Me.Offense.Size = New System.Drawing.Size(300, 461)
-        Me.Offense.TabIndex = 0
-        Me.Offense.Text = "Overall"
+        Me.Ovr.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Ovr.Controls.Add(Me.oRemove)
+        Me.Ovr.Controls.Add(Me.oDraft)
+        Me.Ovr.Controls.Add(Me.ListBox1)
+        Me.Ovr.Location = New System.Drawing.Point(4, 22)
+        Me.Ovr.Name = "Ovr"
+        Me.Ovr.Padding = New System.Windows.Forms.Padding(3)
+        Me.Ovr.Size = New System.Drawing.Size(332, 461)
+        Me.Ovr.TabIndex = 0
+        Me.Ovr.Text = "Ovr"
         '
         'oRemove
         '
@@ -410,17 +415,18 @@ Partial Class Main
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.Offense)
+        Me.TabControl1.Controls.Add(Me.Ovr)
         Me.TabControl1.Controls.Add(Me.QB)
-        Me.TabControl1.Controls.Add(Me.WR)
+        Me.TabControl1.Controls.Add(Me.Flex)
         Me.TabControl1.Controls.Add(Me.RB)
+        Me.TabControl1.Controls.Add(Me.WR)
         Me.TabControl1.Controls.Add(Me.TE)
         Me.TabControl1.Controls.Add(Me.PK)
         Me.TabControl1.Controls.Add(Me.DEF)
         Me.TabControl1.Location = New System.Drawing.Point(15, 15)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(308, 487)
+        Me.TabControl1.Size = New System.Drawing.Size(340, 487)
         Me.TabControl1.TabIndex = 3
         '
         'Splitter1
@@ -781,6 +787,50 @@ Partial Class Main
         Me.Label35.TabIndex = 34
         Me.Label35.Text = "Fumble TDs:"
         '
+        'Flex
+        '
+        Me.Flex.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Flex.Controls.Add(Me.Button13)
+        Me.Flex.Controls.Add(Me.Button14)
+        Me.Flex.Controls.Add(Me.ListBox8)
+        Me.Flex.Location = New System.Drawing.Point(4, 22)
+        Me.Flex.Name = "Flex"
+        Me.Flex.Size = New System.Drawing.Size(332, 461)
+        Me.Flex.TabIndex = 7
+        Me.Flex.Text = "Flex"
+        '
+        'Button13
+        '
+        Me.Button13.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button13.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button13.Location = New System.Drawing.Point(150, 419)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(123, 23)
+        Me.Button13.TabIndex = 12
+        Me.Button13.Text = "Remove"
+        Me.Button13.UseVisualStyleBackColor = False
+        '
+        'Button14
+        '
+        Me.Button14.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button14.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button14.Location = New System.Drawing.Point(28, 419)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(116, 23)
+        Me.Button14.TabIndex = 11
+        Me.Button14.Text = "Draft"
+        Me.Button14.UseVisualStyleBackColor = False
+        '
+        'ListBox8
+        '
+        Me.ListBox8.FormattingEnabled = True
+        Me.ListBox8.Location = New System.Drawing.Point(28, 19)
+        Me.ListBox8.Name = "ListBox8"
+        Me.ListBox8.Size = New System.Drawing.Size(245, 394)
+        Me.ListBox8.TabIndex = 10
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -833,8 +883,9 @@ Partial Class Main
         Me.RB.ResumeLayout(False)
         Me.WR.ResumeLayout(False)
         Me.QB.ResumeLayout(False)
-        Me.Offense.ResumeLayout(False)
+        Me.Ovr.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
+        Me.Flex.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -845,7 +896,7 @@ Partial Class Main
     Friend WithEvents RB As System.Windows.Forms.TabPage
     Friend WithEvents WR As System.Windows.Forms.TabPage
     Friend WithEvents QB As System.Windows.Forms.TabPage
-    Friend WithEvents Offense As System.Windows.Forms.TabPage
+    Friend WithEvents Ovr As System.Windows.Forms.TabPage
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents Splitter1 As System.Windows.Forms.Splitter
     Friend WithEvents oRemove As System.Windows.Forms.Button
@@ -904,5 +955,9 @@ Partial Class Main
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents Flex As System.Windows.Forms.TabPage
+    Friend WithEvents Button13 As System.Windows.Forms.Button
+    Friend WithEvents Button14 As System.Windows.Forms.Button
+    Friend WithEvents ListBox8 As System.Windows.Forms.ListBox
 
 End Class

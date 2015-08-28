@@ -1,4 +1,4 @@
-Enter file contents herePublic Class Player
+Public Class Kicker
     ' Name
     Public Property name() As String
         Get
@@ -20,8 +20,8 @@ Enter file contents herePublic Class Player
         End Set
     End Property
     Private m_team As String
-	
-	' gamesPlayed
+
+    ' gamesPlayed
     Public Property gamesPlayed() As Integer
         Get
             Return mgamesPlayed
@@ -31,8 +31,8 @@ Enter file contents herePublic Class Player
         End Set
     End Property
     Private mgamesPlayed As Integer
-	
-	' extraPoints
+
+    ' extraPoints
     Public Property extraPoints() As Integer
         Get
             Return mextraPoints
@@ -42,8 +42,8 @@ Enter file contents herePublic Class Player
         End Set
     End Property
     Private mextraPoints As Integer
-	
-	' fieldGoal_0_19
+
+    ' fieldGoal_0_19
     Public Property fieldGoal_0_19() As Integer
         Get
             Return mfieldGoal_0_19
@@ -53,8 +53,8 @@ Enter file contents herePublic Class Player
         End Set
     End Property
     Private mfieldGoal_0_19 As Integer
-	
-	' fieldGoal_20_29
+
+    ' fieldGoal_20_29
     Public Property fieldGoal_20_29() As Integer
         Get
             Return mfieldGoal_20_29
@@ -64,8 +64,8 @@ Enter file contents herePublic Class Player
         End Set
     End Property
     Private mfieldGoal_20_29 As Integer
-	
-	' fieldGoal_30_39
+
+    ' fieldGoal_30_39
     Public Property fieldGoal_30_39() As Integer
         Get
             Return mfieldGoal_30_39
@@ -75,8 +75,8 @@ Enter file contents herePublic Class Player
         End Set
     End Property
     Private mfieldGoal_30_39 As Integer
-	
-	' fieldGoal_40_49
+
+    ' fieldGoal_40_49
     Public Property fieldGoal_40_49() As Integer
         Get
             Return mfieldGoal_40_49
@@ -86,8 +86,8 @@ Enter file contents herePublic Class Player
         End Set
     End Property
     Private mfieldGoal_40_49 As Integer
-	
-	' fieldGoal_50
+
+    ' fieldGoal_50
     Public Property fieldGoal_50() As Integer
         Get
             Return mfieldGoal_50
@@ -152,4 +152,15 @@ Enter file contents herePublic Class Player
         End Set
     End Property
     Private mPos As String
+
+    ' Pos Rank
+    Public Property PosRank() As Integer
+        Get
+            Return mPosRank
+        End Get
+        Set(value As Integer)
+            mPosRank = value
+        End Set
+    End Property
+    Private mPosRank As Integer
 End Class

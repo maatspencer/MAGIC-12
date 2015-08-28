@@ -196,7 +196,7 @@
         End Set
     End Property
     Private mOvrRank As Integer
-    
+
     ' Position
     Public Property Pos() As String
         Get

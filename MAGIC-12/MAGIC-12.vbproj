@@ -73,8 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Defense.vb" />
+    <Compile Include="Classes\Kicker.vb" />
     <Compile Include="Classes\Offense.vb" />
     <Compile Include="Classes\Player.vb" />
+    <Compile Include="Globals.vb" />
+    <Compile Include="initialBuild.vb" />
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
