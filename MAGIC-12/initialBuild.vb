@@ -52,6 +52,10 @@ Public Class initialBuild
 
         o.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
 
+        For i = 0 To o.Count - 1
+            o.Item(i).PosRank = i + 1
+        Next
+
         Return o
     End Function
 
@@ -98,6 +102,10 @@ Public Class initialBuild
         Next
 
         o.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
+
+        For i = 0 To o.Count - 1
+            o.Item(i).PosRank = i + 1
+        Next
 
         Return o
     End Function
@@ -146,6 +154,10 @@ Public Class initialBuild
 
         o.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
 
+        For i = 0 To o.Count - 1
+            o.Item(i).PosRank = i + 1
+        Next
+
         Return o
     End Function
 
@@ -184,10 +196,11 @@ Public Class initialBuild
         For i = 0 To oQB.Count - 1
             Dim t As Player = New Player
             t.name = oQB.Item(i).name
+            t.team = oQB.Item(i).team
+            t.gamesPlayed = oQB.Item(i).gamesPlayed
             t.CSRPoints = oQB.Item(i).CSRPoints
             t.MattsPoints = oQB.Item(i).MattsPoints
             t.NFLPoints = oQB.Item(i).NFLPoints
-            t.OvrRank = oQB.Item(i).OvrRank
             t.PosRank = oQB.Item(i).PosRank
             t.Pos = "QB"
 
@@ -198,10 +211,11 @@ Public Class initialBuild
         For i = 0 To oFlex.Count - 1
             Dim t As Player = New Player
             t.name = oFlex.Item(i).name
+            t.team = oFlex.Item(i).team
+            t.gamesPlayed = oFlex.Item(i).gamesPlayed
             t.CSRPoints = oFlex.Item(i).CSRPoints
             t.MattsPoints = oFlex.Item(i).MattsPoints
             t.NFLPoints = oFlex.Item(i).NFLPoints
-            t.OvrRank = oFlex.Item(i).OvrRank
             t.PosRank = oFlex.Item(i).PosRank
             t.Pos = oFlex.Item(i).Pos
 
@@ -212,17 +226,38 @@ Public Class initialBuild
         For i = 0 To oPK.Count - 1
             Dim t As Player = New Player
             t.name = oPK.Item(i).name
+            t.team = oPK.Item(i).team
+            t.gamesPlayed = oPK.Item(i).gamesPlayed
             t.CSRPoints = oPK.Item(i).CSRPoints
             t.MattsPoints = oPK.Item(i).MattsPoints
             t.NFLPoints = oPK.Item(i).NFLPoints
-            t.OvrRank = oPK.Item(i).OvrRank
             t.PosRank = oPK.Item(i).PosRank
             t.Pos = oPK.Item(i).Pos
 
             oOvr.Add(t)
         Next
 
+        ' Defense
+        ' Kicker
+        For i = 0 To oDEF.Count - 1
+            Dim t As Player = New Player
+            t.name = oDEF.Item(i).name
+            t.team = oDEF.Item(i).team
+            t.gamesPlayed = oDEF.Item(i).gamesPlayed
+            t.CSRPoints = oDEF.Item(i).CSRPoints
+            t.MattsPoints = oDEF.Item(i).MattsPoints
+            t.NFLPoints = oDEF.Item(i).NFLPoints
+            t.PosRank = oDEF.Item(i).PosRank
+            t.Pos = oDEF.Item(i).Pos
+
+            oOvr.Add(t)
+        Next
+
         oOvr.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
+
+        For i = 0 To oOvr.Count - 1
+            oOvr.Item(i).OvrRank = i + 1
+        Next
 
     End Sub
 End Class

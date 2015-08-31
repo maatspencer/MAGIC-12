@@ -21,6 +21,17 @@
     End Property
     Private m_team As String
 
+    ' gamesPlayed
+    Public Property gamesPlayed() As Integer
+        Get
+            Return mgamesPlayed
+        End Get
+        Set(value As Integer)
+            mgamesPlayed = value
+        End Set
+    End Property
+    Private mgamesPlayed As Integer
+
     ' NFL Points
     Public Property NFLPoints() As Decimal
         Get

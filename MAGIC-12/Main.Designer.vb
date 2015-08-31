@@ -52,6 +52,10 @@ Partial Class Main
         Me.oDraft = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.Flex = New System.Windows.Forms.TabPage()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.ListBox8 = New System.Windows.Forms.ListBox()
         Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -88,10 +92,6 @@ Partial Class Main
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.Flex = New System.Windows.Forms.TabPage()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.ListBox8 = New System.Windows.Forms.ListBox()
         Me.DEF.SuspendLayout()
         Me.PK.SuspendLayout()
         Me.TE.SuspendLayout()
@@ -428,6 +428,50 @@ Partial Class Main
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(340, 487)
         Me.TabControl1.TabIndex = 3
+        '
+        'Flex
+        '
+        Me.Flex.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Flex.Controls.Add(Me.Button13)
+        Me.Flex.Controls.Add(Me.Button14)
+        Me.Flex.Controls.Add(Me.ListBox8)
+        Me.Flex.Location = New System.Drawing.Point(4, 22)
+        Me.Flex.Name = "Flex"
+        Me.Flex.Size = New System.Drawing.Size(332, 461)
+        Me.Flex.TabIndex = 7
+        Me.Flex.Text = "Flex"
+        '
+        'Button13
+        '
+        Me.Button13.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button13.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button13.Location = New System.Drawing.Point(150, 419)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(123, 23)
+        Me.Button13.TabIndex = 12
+        Me.Button13.Text = "Remove"
+        Me.Button13.UseVisualStyleBackColor = False
+        '
+        'Button14
+        '
+        Me.Button14.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button14.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button14.Location = New System.Drawing.Point(28, 419)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(116, 23)
+        Me.Button14.TabIndex = 11
+        Me.Button14.Text = "Draft"
+        Me.Button14.UseVisualStyleBackColor = False
+        '
+        'ListBox8
+        '
+        Me.ListBox8.FormattingEnabled = True
+        Me.ListBox8.Location = New System.Drawing.Point(28, 19)
+        Me.ListBox8.Name = "ListBox8"
+        Me.ListBox8.Size = New System.Drawing.Size(245, 394)
+        Me.ListBox8.TabIndex = 10
         '
         'Splitter1
         '
@@ -787,50 +831,6 @@ Partial Class Main
         Me.Label35.TabIndex = 34
         Me.Label35.Text = "Fumble TDs:"
         '
-        'Flex
-        '
-        Me.Flex.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Flex.Controls.Add(Me.Button13)
-        Me.Flex.Controls.Add(Me.Button14)
-        Me.Flex.Controls.Add(Me.ListBox8)
-        Me.Flex.Location = New System.Drawing.Point(4, 22)
-        Me.Flex.Name = "Flex"
-        Me.Flex.Size = New System.Drawing.Size(332, 461)
-        Me.Flex.TabIndex = 7
-        Me.Flex.Text = "Flex"
-        '
-        'Button13
-        '
-        Me.Button13.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button13.Location = New System.Drawing.Point(150, 419)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(123, 23)
-        Me.Button13.TabIndex = 12
-        Me.Button13.Text = "Remove"
-        Me.Button13.UseVisualStyleBackColor = False
-        '
-        'Button14
-        '
-        Me.Button14.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button14.Location = New System.Drawing.Point(28, 419)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(116, 23)
-        Me.Button14.TabIndex = 11
-        Me.Button14.Text = "Draft"
-        Me.Button14.UseVisualStyleBackColor = False
-        '
-        'ListBox8
-        '
-        Me.ListBox8.FormattingEnabled = True
-        Me.ListBox8.Location = New System.Drawing.Point(28, 19)
-        Me.ListBox8.Name = "ListBox8"
-        Me.ListBox8.Size = New System.Drawing.Size(245, 394)
-        Me.ListBox8.TabIndex = 10
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -876,7 +876,7 @@ Partial Class Main
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Main"
-        Me.Text = "MAGIC-12"
+        Me.Text = "MAGIC-12 by Matt Spencer"
         Me.DEF.ResumeLayout(False)
         Me.PK.ResumeLayout(False)
         Me.TE.ResumeLayout(False)

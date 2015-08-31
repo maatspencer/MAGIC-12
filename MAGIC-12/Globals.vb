@@ -12,5 +12,21 @@
 
     Public Shared oOvr As List(Of Player)
 
-    ' To be drafted
+    ' My Drafted Players
+    Public Shared mQB As Integer
+    Public Shared mWR As Integer
+    Public Shared mRB As Integer
+    Public Shared mTE As Integer
+    Public Shared mFLEX As Integer
+    Public Shared mDEF As Integer
+    Public Shared mPK As Integer
+
+    ' All Drafted Players
+    Public Shared aQB As Integer
+    Public Shared aWR As Integer
+    Public Shared aRB As Integer
+    Public Shared aTE As Integer
+    Public Shared aFLEX As Integer
+    Public Shared aDEF As Integer
+    Public Shared aPK As Integer
 End Class
