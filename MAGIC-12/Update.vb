@@ -1,15 +1,16 @@
 Imports System.IO
 Imports MAGIC_12.Globals
 Imports MAGIC_12.initialBuild
+Imports MAGIC_12.Main
 
-Public Class Update
+Public Class UpdateItems
 
     Public Shared Sub Start(name As String, pos As String, isDraft As Boolean)
         globalVars(pos, isDraft)
         CSRValues()
         Lists(name)
     End Sub
-	
+
     Private Shared Sub Lists(name As String)
         ' Overall
         For i = 0 To oOvr.Count - 1
@@ -98,7 +99,7 @@ Public Class Update
 
 
     End Sub
-	
+
     Private Shared Sub globalVars(pos As String, isDraft As Boolean)
         Select Case pos
             Case "QB"
