@@ -20,6 +20,7 @@
     Public Shared mFLEX As Integer
     Public Shared mDEF As Integer
     Public Shared mPK As Integer
+    Public Shared mRoster As Integer
 
     ' All Drafted Players
     Public Shared aQB As Integer
@@ -29,4 +30,11 @@
     Public Shared aFLEX As Integer
     Public Shared aDEF As Integer
     Public Shared aPK As Integer
+    Public Shared aRoster As Integer
+
+    ' POS CSR
+    Public Shared cQB As Integer
+    Public Shared cFLEX As Integer
+    Public Shared cDEF As Integer
+    Public Shared cPK As Integer
 End Class
