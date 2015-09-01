@@ -385,7 +385,8 @@ Public Class Main
     End Sub
     ' Ovr
     Private Sub oDraft_Click(sender As Object, e As EventArgs) Handles oDraft.Click
-
+        Dim t As Player = ListBox1.SelectedItem
+        Update.Start(t.name, t.Pos, True)
     End Sub
 
     Private Sub oRemove_Click(sender As Object, e As EventArgs) Handles oRemove.Click
