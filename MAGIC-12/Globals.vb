@@ -37,4 +37,7 @@
     Public Shared cFLEX As Integer
     Public Shared cDEF As Integer
     Public Shared cPK As Integer
+    Public Shared cRB As Integer
+    Public Shared cWR As Integer
+    Public Shared cTE As Integer
 End Class

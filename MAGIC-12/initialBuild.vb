@@ -238,7 +238,6 @@ Public Class initialBuild
         Next
 
         ' Defense
-        ' Kicker
         For i = 0 To oDEF.Count - 1
             Dim t As Player = New Player
             t.name = oDEF.Item(i).name

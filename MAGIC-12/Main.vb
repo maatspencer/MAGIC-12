@@ -61,10 +61,13 @@ Public Class Main
         For i = 0 To oOvr.Count - 1
             ListBox1.Items.Add(oOvr.Item(i).CSRPoints & vbTab & oOvr.Item(i).Pos & vbTab & oOvr.Item(i).name)
         Next
-        ListBox5.Update()
+        ListBox1.Update()
 
         ' Update Overall rank in all lists
         updateOverallRank()
+
+        ' Set initial Labels
+        updateRosters()
 
         ' Set initial Selection
         ListBox1.SetSelected(0, True)
@@ -385,29 +388,274 @@ Public Class Main
     End Sub
     ' Ovr
     Private Sub oDraft_Click(sender As Object, e As EventArgs) Handles oDraft.Click
-        Dim t As Player = ListBox1.SelectedItem
-        Update.Start(t.name, t.Pos, True)
+        Dim t As Player = oOvr.Item(ListBox1.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox1.SetSelected(0, True)
     End Sub
 
     Private Sub oRemove_Click(sender As Object, e As EventArgs) Handles oRemove.Click
+        Dim t As Player = oOvr.Item(ListBox1.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, False)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox1.SetSelected(0, True)
 
     End Sub
 
     ' QB
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim t As Offense = oQB.Item(ListBox2.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox2.SetSelected(0, True)
 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim t As Offense = oQB.Item(ListBox2.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, False)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
 
+        updateOverallRank()
+        updateListBoxes()
+        ListBox2.SetSelected(0, True)
     End Sub
 
     ' Flex
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        Dim t As Offense = oFlex.Item(ListBox8.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
 
+        updateOverallRank()
+        updateListBoxes()
+        ListBox8.SetSelected(0, True)
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        Dim t As Offense = oFlex.Item(ListBox8.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, False)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox8.SetSelected(0, True)
+    End Sub
+
+    ' RB
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim t As Offense = oRB.Item(ListBox4.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox4.SetSelected(0, True)
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim t As Offense = oRB.Item(ListBox4.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, False)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox4.SetSelected(0, True)
+    End Sub
+
+    ' WR
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim t As Offense = oWR.Item(ListBox3.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox3.SetSelected(0, True)
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim t As Offense = oWR.Item(ListBox3.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, False)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox3.SetSelected(0, True)
+    End Sub
+
+    ' TE
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Dim t As Offense = oTE.Item(ListBox5.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox5.SetSelected(0, True)
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Dim t As Offense = oTE.Item(ListBox5.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, False)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox5.SetSelected(0, True)
+    End Sub
+
+    ' PK
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Dim t As Kicker = oPK.Item(ListBox6.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox6.SetSelected(0, True)
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Dim t As Kicker = oPK.Item(ListBox6.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, False)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox6.SetSelected(0, True)
+    End Sub
+
+    ' DEF
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Dim t As Defense = oDEF.Item(ListBox7.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox7.SetSelected(0, True)
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Dim t As Defense = oDEF.Item(ListBox7.SelectedIndex)
+        UpdateItems.Start(t.name, t.Pos, True)
+        initialBuild.buildFlex()
+        initialBuild.buildOverall()
+
+        updateOverallRank()
+        updateListBoxes()
+        ListBox7.SetSelected(0, True)
+    End Sub
+
+    Private Sub updateListBoxes()
+        ' Quarterback
+        ListBox2.Items.Clear()
+        For i = 0 To oQB.Count - 1
+            ListBox2.Items.Add(oQB.Item(i).CSRPoints & vbTab & oQB.Item(i).MattsPoints & vbTab & oQB.Item(i).name)
+        Next
+        ListBox2.Update()
+
+        ' Wide Recievers
+        ListBox3.Items.Clear()
+        For i = 0 To oWR.Count - 1
+            ListBox3.Items.Add(oWR.Item(i).CSRPoints & vbTab & oWR.Item(i).MattsPoints & vbTab & oWR.Item(i).name)
+        Next
+        ListBox3.Update()
+
+        ' Running Backs
+        ListBox4.Items.Clear()
+        For i = 0 To oRB.Count - 1
+            ListBox4.Items.Add(oRB.Item(i).CSRPoints & vbTab & oRB.Item(i).MattsPoints & vbTab & oRB.Item(i).name)
+        Next
+        ListBox4.Update()
+
+        ' Tight Ends
+        ListBox5.Items.Clear()
+        For i = 0 To oTE.Count - 1
+            ListBox5.Items.Add(oTE.Item(i).CSRPoints & vbTab & oTE.Item(i).MattsPoints & vbTab & oTE.Item(i).name)
+        Next
+        ListBox5.Update()
+
+        ' Kicker
+        ListBox6.Items.Clear()
+        For i = 0 To oPK.Count - 1
+            ListBox6.Items.Add(oPK.Item(i).CSRPoints & vbTab & oPK.Item(i).MattsPoints & vbTab & oPK.Item(i).name)
+        Next
+        ListBox6.Update()
+
+        ' Defense
+        ListBox7.Items.Clear()
+        For i = 0 To oDEF.Count - 1
+            ListBox7.Items.Add(oDEF.Item(i).CSRPoints & vbTab & oDEF.Item(i).MattsPoints & vbTab & oDEF.Item(i).name)
+        Next
+        ListBox7.Update()
+
+        ' Flex
+        ListBox8.Items.Clear()
+        For i = 0 To oFlex.Count - 1
+            ListBox8.Items.Add(oFlex.Item(i).CSRPoints & vbTab & oFlex.Item(i).Pos & vbTab & oFlex.Item(i).name)
+        Next
+        ListBox8.Update()
+
+
+        ' Overall
+        ListBox1.Items.Clear()
+        For i = 0 To oOvr.Count - 1
+            ListBox1.Items.Add(oOvr.Item(i).CSRPoints & vbTab & oOvr.Item(i).Pos & vbTab & oOvr.Item(i).name)
+        Next
+        ListBox1.Update()
+
+        updateRosters()
+    End Sub
+    Private Sub updateRosters()
+        ' My Team
+        Label43.Text = mQB
+        Label41.Text = mRB
+        Label39.Text = mWR
+
+        Label47.Text = mTE
+        Label45.Text = mPK
+        Label37.Text = mDEF
+
+        Label53.Text = mFLEX
+        Label51.Text = mRoster
+
+        ' All Teams
+        Label67.Text = aQB
+        Label65.Text = aRB
+        Label63.Text = aWR
+
+        Label61.Text = aTE
+        Label59.Text = aPK
+        Label57.Text = aDEF
+
+        Label55.Text = aFLEX
+        Label49.Text = aRoster
 
     End Sub
 

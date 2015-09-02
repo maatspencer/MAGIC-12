@@ -7,20 +7,12 @@ Public Class UpdateItems
 
     Public Shared Sub Start(name As String, pos As String, isDraft As Boolean)
         globalVars(pos, isDraft)
+        removeItem(name)
         CSRValues()
-        Lists(name)
+        Lists()
     End Sub
 
-    Private Shared Sub Lists(name As String)
-        ' Overall
-        For i = 0 To oOvr.Count - 1
-            Dim index As Integer = oOvr.FindIndex(Function(a) a.name.Equals(name, StringComparison.Ordinal))
-            If Not index = -1 Then
-                oOvr.RemoveAt(index)
-                Exit For
-            End If
-        Next
-
+    Private Shared Sub removeItem(name As String)
         ' QB
         For i = 0 To oQB.Count - 1
             Dim index As Integer = oQB.FindIndex(Function(a) a.name.Equals(name, StringComparison.Ordinal))
@@ -30,20 +22,8 @@ Public Class UpdateItems
             End If
         Next
 
-        oQB.Sort(Function(x, y) y.MattsPoints.CompareTo(x.MattsPoints))
-
-        For i = 0 To oQB.Count - 1
-            oQB.Item(i).CSRPoints = oQB.Item(i).MattsPoints() - oQB.Item(cQB - 1).MattsPoints
-        Next
-
-        oQB.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
-
-        For i = 0 To oQB.Count - 1
-            oQB.Item(i).PosRank = i + 1
-        Next
-
         ' RB
-        For i = 0 To oQB.Count - 1
+        For i = 0 To oRB.Count - 1
             Dim index As Integer = oRB.FindIndex(Function(a) a.name.Equals(name, StringComparison.Ordinal))
             If Not index = -1 Then
                 oRB.RemoveAt(index)
@@ -69,15 +49,6 @@ Public Class UpdateItems
             End If
         Next
 
-        ' FLEX
-        For i = 0 To oFlex.Count - 1
-            Dim index As Integer = oFlex.FindIndex(Function(a) a.name.Equals(name, StringComparison.Ordinal))
-            If Not index = -1 Then
-                oFlex.RemoveAt(index)
-                Exit For
-            End If
-        Next
-
         ' Kicker
         For i = 0 To oPK.Count - 1
             Dim index As Integer = oPK.FindIndex(Function(a) a.name.Equals(name, StringComparison.Ordinal))
@@ -95,9 +66,98 @@ Public Class UpdateItems
                 Exit For
             End If
         Next
+    End Sub
 
+    Private Shared Sub Lists()
+        ' QB
+        For i = 0 To oQB.Count - 1
+            Try
+                oQB.Item(i).CSRPoints = oQB.Item(i).MattsPoints() - oQB.Item(cQB - 1).MattsPoints
+            Catch
+                oQB.Item(i).CSRPoints = oQB.Item(i).MattsPoints() - oQB.Item(0).MattsPoints
+            End Try
+        Next
 
+        oQB.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
 
+        For i = 0 To oQB.Count - 1
+            oQB.Item(i).PosRank = i + 1
+        Next
+
+        ' RB
+        For i = 0 To oRB.Count - 1
+            Try
+                oRB.Item(i).CSRPoints = oRB.Item(i).MattsPoints() - oRB.Item(cRB - 1).MattsPoints
+            Catch
+                oRB.Item(i).CSRPoints = oRB.Item(i).MattsPoints() - oRB.Item(0).MattsPoints
+            End Try
+        Next
+
+        oRB.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
+
+        For i = 0 To oRB.Count - 1
+            oRB.Item(i).PosRank = i + 1
+        Next
+
+        ' WR
+        For i = 0 To oWR.Count - 1
+            Try
+                oWR.Item(i).CSRPoints = oWR.Item(i).MattsPoints() - oWR.Item(cWR - 1).MattsPoints
+            Catch
+                oWR.Item(i).CSRPoints = oWR.Item(i).MattsPoints() - oWR.Item(0).MattsPoints
+            End Try
+        Next
+
+        oWR.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
+
+        For i = 0 To oWR.Count - 1
+            oWR.Item(i).PosRank = i + 1
+        Next
+
+        ' TE
+        For i = 0 To oTE.Count - 1
+            Try
+                oTE.Item(i).CSRPoints = oTE.Item(i).MattsPoints() - oTE.Item(cTE - 1).MattsPoints
+            Catch
+                oTE.Item(i).CSRPoints = oTE.Item(i).MattsPoints() - oTE.Item(0).MattsPoints
+            End Try
+        Next
+
+        oTE.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
+
+        For i = 0 To oTE.Count - 1
+            oTE.Item(i).PosRank = i + 1
+        Next
+
+        ' Kicker
+        For i = 0 To oPK.Count - 1
+            Try
+                oPK.Item(i).CSRPoints = oPK.Item(i).MattsPoints() - oPK.Item(cPK - 1).MattsPoints
+            Catch
+                oPK.Item(i).CSRPoints = oPK.Item(i).MattsPoints() - oPK.Item(0).MattsPoints
+            End Try
+        Next
+
+        oPK.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
+
+        For i = 0 To oPK.Count - 1
+            oPK.Item(i).PosRank = i + 1
+        Next
+
+        ' DEF
+        For i = 0 To oDEF.Count - 1
+            Try
+                oDEF.Item(i).CSRPoints = oDEF.Item(i).MattsPoints() - oDEF.Item(cDEF - 1).MattsPoints
+            Catch
+                oDEF.Item(i).CSRPoints = oDEF.Item(i).MattsPoints() - oDEF.Item(0).MattsPoints
+            End Try
+        Next
+
+        oDEF.Sort(Function(x, y) y.CSRPoints.CompareTo(x.CSRPoints))
+
+        For i = 0 To oDEF.Count - 1
+            oDEF.Item(i).PosRank = i + 1
+        Next
     End Sub
 
     Private Shared Sub globalVars(pos As String, isDraft As Boolean)
@@ -152,6 +212,9 @@ Public Class UpdateItems
         Else
             aRoster += 1
         End If
+
+        mFLEX = mRB + mWR + mTE
+        aFLEX = aRB + aWR + aTE
     End Sub
 
     Private Shared Sub CSRValues()
@@ -161,6 +224,17 @@ Public Class UpdateItems
             cPK = 12 - aPK
             cDEF = 12 - aDEF
             cFLEX = 60 - aFLEX
+            cTE = 12 - aTE
+            cRB = 24 - aRB
+            cWR = 24 - aWR
+        Else
+            cQB = 24 - aQB
+            cPK = 24 - aPK
+            cDEF = 24 - aDEF
+            cFLEX = 120 - aFLEX
+            cTE = 24 - aTE
+            cRB = 48 - aRB
+            cWR = 48 - aWR
         End If
     End Sub
 End Class
